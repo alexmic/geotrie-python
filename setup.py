@@ -16,14 +16,14 @@ with open('README.md') as fd:
 
 
 setup(
-    name='geotrie-python',
+    name='geotrie',
     version=version,
     packages=find_packages(exclude=['tests']),
     license='MIT',
     author='Alex Michael',
     author_email='hi@alexmic.net',
     url='https://github.com/alexmic/geotrie-python',
-    description='Geospatial search using geohashes, backed by a trie.',
+    description='Geospatial search using geohashing, backed by a trie.',
     keywords=['geohash', 'trie', 'spatial', 'search'],
     install_requires=requirements,
     long_description=long_description,
