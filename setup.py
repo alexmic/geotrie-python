@@ -28,7 +28,7 @@ setup(
     install_requires=requirements,
     long_description=long_description,
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
