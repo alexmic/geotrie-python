@@ -69,7 +69,7 @@ class Trie(object):
 
     def add_many(self, tuples):
         for key, value in tuples:
-            self.add(key, value, value)
+            self.add(key, value)
 
     def has(self, key):
         try:
