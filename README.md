@@ -2,6 +2,8 @@
 
 Geospatial search using geohashing, backed by a trie.
 
+### Warning: This is still a WIP!
+
 ## Installation
 
 The package is hosted on PyPI. Install it using `pip`:
