@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -prune -o -name "*.pyc" -print -o -name "__pycache__" -print | xargs rm -rf
+find tests geotrie -name "*.pyc" -or -name "__pycache__" -delete
