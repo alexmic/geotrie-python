@@ -28,8 +28,14 @@ PRECISION_LEVELS = (
 
 class GeoTrie(object):
 
-    def __init__(self, points=None, precision=MAX_PRECISION):
-        self._precision = MAX_PRECISION
+    def __init__(self, points=None, precision=DEFAULT_PRECISION):
+        """Initializes the geotrie.
+
+        :param points: A list of (point, data) tuples to initialize the trie with.
+        :param precision: The geohash precision for encoding the points.
+
+        """
+        self._precision = precision
         self.trie = Trie()
         if points is not None:
             self.add_many(points)
@@ -43,10 +49,22 @@ class GeoTrie(object):
         raise NotImplementedError
 
     def add(self, point, data=None):
+        """Adds a new point to the trie.
+
+        :param point: A coordinate tuple.
+        :param data: Optional data to store with the point.
+
+        """
         encoded = geohash.encode(*point, precision=self.precision)
         self.trie.add(encoded, (point, data))
 
     def add_many(self, tuples):
+        """Adds many points to the trie.
+
+        :param tuples: A list of (point, data) tuples. Set data to `None` to not store
+        any data with the points.
+
+        """
         for point, data in tuples:
             self.add(point, data=data)
 
