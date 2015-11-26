@@ -60,7 +60,7 @@ class GeoTrie(object):
         precision = min(self.precision, self._radius_to_precision(radius))
         center_hash = geohash.encode(*center, precision=precision)
         hits = self._get_hits(center_hash)
-        return [d for p, d in hits if haversine(p, center) <= (radius / 1000)]
+        return [(p, d) for p, d in hits if haversine(p, center) <= (radius / 1000)]
 
     def _get_hits(self, center_hash):
         hits = []
