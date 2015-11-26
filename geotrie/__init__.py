@@ -51,7 +51,13 @@ class GeoTrie(object):
             self.add(point, data=data)
 
     def radius_search(self, center, radius):
-        precision = self._radius_to_precision(radius)
+        """Returns all points that are `radius` distance apart from the center.
+
+        :param center: A coordinate tuple.
+        :param radius: The radius in meters.
+
+        """
+        precision = min(self.precision, self._radius_to_precision(radius))
         center_hash = geohash.encode(*center, precision=precision)
         hits = self._get_hits(center_hash)
         return [d for p, d in hits if haversine(p, center) <= (radius / 1000)]
