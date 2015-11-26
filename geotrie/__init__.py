@@ -8,7 +8,7 @@ from haversine import haversine
 from .trie import Trie, KeyNotFound
 
 
-MAX_PRECISION = 8
+DEFAULT_PRECISION = 10
 
 PRECISION_LEVELS = (
     (0.00925, 12),
